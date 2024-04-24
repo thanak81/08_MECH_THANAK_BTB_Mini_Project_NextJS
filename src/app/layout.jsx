@@ -1,5 +1,8 @@
+import SidebarComponent from "@/components/SidebarComponent";
 import "./globals.css";
-
+import NavbarComponent from "@/components/NavbarComponent";
+import ListBoardComponentHeader from "@/components/ListBoardComponentHeader";
+import AuthProvider from "./api/auth/Provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -9,8 +12,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-SFProDisplay">
-        {children}
+      <body className="font-SFProDisplay w-full flex gap-5 h-screen overflow-y-hidden transition-all">
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
